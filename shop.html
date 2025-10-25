@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro-Sports Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <header id="main-header" style="width:100%; color:#fff; position: fixed; top:0; left:0; z-index:1000; transition:height 0.3s, box-shadow 0.3s; height:48px; box-shadow:0 2px 8px rgba(0,0,0,0.08); background:#007bff;">
+        <div id="header-content" style="display:flex; align-items:center; justify-content:space-between; max-width:1200px; margin:0 auto; padding:10px 60px; height:48px; transition:padding 0.3s, height 0.3s; background:#007bff;">
+            <div style="display:flex; align-items:center; gap:16px; font-size:2.5em; font-weight:bold; letter-spacing:2px;">
+                <a href="PRO SPORT SHOP.html">
+                    <img src="IMAGES/coverpage.jpg" alt="Logo" style="height:38px; width:38px; object-fit:cover; border-radius:50%; vertical-align:middle; margin-right:6px;">
+                </a>
+                <a href="PRO SPORT SHOP.html" style="color:inherit; text-decoration:none;">PRO SPORTS SHOP</a>
+            </div>
+            <div id="hamburger" style="display:flex; flex-direction:column; cursor:pointer; width:32px; height:32px; justify-content:center;">
+                <span style="height:4px; background:#fff; margin:3px 0; border-radius:2px; display:block;"></span>
+                <span style="height:4px; background:#fff; margin:3px 0; border-radius:2px; display:block;"></span>
+                <span style="height:4px; background:#fff; margin:3px 0; border-radius:2px; display:block;"></span>
+            </div>
+        </div>
+        <nav id="main-nav" style="background:#007bff; display:none; flex-direction:column; align-items:flex-end; padding:10px 15px;">
+            <a class="cover-menu nav-link" id="home-menu" href="PRO SPORT SHOP.html">Home</a>
+            <a class="cover-menu nav-link" id="shop-menu" href="shop.html">Shop</a>
+            <a class="cover-menu nav-link" id="contact-menu" href="contact.html">Contact</a>
+            <a class="cover-menu nav-link" id="about-menu" href="about.html">About</a>
+            <a class="nav-link" id="add-to-cart-btn" href="cart.html">Cart</a>
+        </nav>
+    </header>
+
+    
+    <div class="container hidden" id="home-page" style="background: url('IMAGES/stadium.jpg') center center/cover no-repeat; color: #ffffff; min-height: 100vh; padding: 10px 0; margin-top:-65px;">
+        <h2 style="font-size:2.2em; text-transform:uppercase; text-align:center;">
+            Select your preferred sports to continue.
+        </h2>
+        <form id="sports-form" style="margin-bottom: 40px;">
+            <ul class="sports-list" style="font-size: 2.0em; text-align:center;">
+                <li><label><input type="radio" name="sports" value="Football"> Football</label></li>
+                <li><label><input type="radio" name="sports" value="Basketball"> Basketball</label></li>
+                <li><label><input type="radio" name="sports" value="Tennis"> Tennis</label></li>
+                <li><label><input type="radio" name="sports" value="Volley"> Volley</label></li>
+            </ul>
+            <button type="submit" style="font-size: 1.7em; padding: 10px 30px;">Continue</button>
+        </form>
+        
+    </div>
+    <div class="container hidden" id="exit-page">
+        <h2>Thank you for visiting!</h2>
+        <p style="text-align:center;">You have exited the site.</p>
+    </div>
+    <div class="container hidden" id="football-page">
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br> 
+        <h2>Football Items</h2>
+        <div style="margin-bottom: 20px;">
+            <h3>Jerseys</h3>
+            <div style="display:grid; grid-template-columns: repeat(5, 1fr); gap:35px; justify-items:center; flex-wrap:wrap;">
+                <div class="item-card" id="item-football-arsenal" data-name="ARSENAL 25/26 HOME KIT"><img src="IMAGES/Arsenal.jpg" alt="ARSENAL 25/26 HOME KIT" width="130" height="130">
+    <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵120</div>
+</div>
+                <div class="item-card" id="item-football-boca-juniors" data-name="Boca Juniors 25/26 HOME KIT"><img src="IMAGES/Boca Juniors.jpg" alt="Boca Juniors 25/26 HOME KIT" width="130" height="130">
+    <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵100</div>
+</div>
+                <div class="item-card" id="item-football-brighton" data-name="Brighton 25/26 HOME KIT"><img src="IMAGES/Brighton.jpg" alt="Brighton 25/26 HOME KIT" width="130" height="130">
+                     <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵100</div>
+                </div>
+                <div class="item-card" id="item-football-chelsea" data-name="Chelsea 25/26 HOME KIT"><img src="IMAGES/Chelsea.jpg" alt="Chelsea 25/26 HOME KIT" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵120</div>
+                </div>
+                <div class="item-card" id="item-football-chelsea-away" data-name="CHELSEA 25/26 AWAY KIT"><img src="IMAGES/chelsea third.jpg" alt="CHELSEA 25/26 AWAY KIT" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵120</div>
+                </div>
+                <div class="item-card" id="item-football-city" data-name="MAN CITY 25/26 HOME KIT"><img src="IMAGES/City.jpg" alt="MAN CITY 25/26 HOME KIT" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵130</div>
+                </div>
+                <div class="item-card" id="item-football-lyon" data-name="LYON 25/26 HOME KIT"><img src="IMAGES/Lyon.jpg" alt="LYON 25/26 HOME KIT" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵130</div>
+                </div>
+                <div class="item-card" id="item-football-madrid" data-name="REAL MADRID 25/26 HOME KIT"><img src="IMAGES/Madrid.jpg" alt="REAL MADRID 25/26 HOME KIT" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵130</div>
+                </div>
+                <div class="item-card" id="item-football-dortmund" data-name="DORTMUND 25/26 HOME KIT"><img src="IMAGES/dortmund.jpg" alt="DORTMUND 25/26 HOME KIT" width="130" height="130">
+                     <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵100</div>
+                </div>
+                <div class="item-card" id="item-football-leverkusen" data-name="LEVERKUSEN 25/26 HOME KIT"><img src="IMAGES/lever.jpg" alt="LEVERKUSEN 25/26 HOME KIT" width="130" height="130">
+                     <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵100</div>
+                </div>
+                <div class="item-card" id="item-football-inter" data-name="INTER MILAN 25/26 HOME KIT"><img src="IMAGES/inter.jpg" alt="INTER MILAN 25/26 HOME KIT" width="130" height="130">
+                     <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵100</div>
+                </div>
+                <div class="item-card" id="item-football-psg" data-name="PSG 25/26 HOME KIT"><img src="IMAGES/psg.jpg" alt="PSG 25/26 HOME KIT" width="130" height="130">
+                     <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵100</div>
+                </div>
+                <div class="item-card" id="item-football-united" data-name="MAN U 25/26 HOME KIT"><img src="IMAGES/united.jpg" alt="MAN U 25/26 HOME KIT" width="130" height="130">
+                     <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵100</div>
+                </div>
+                <div class="item-card" id="item-football-atletico" data-name="ATLETICO 25/26 HOME KIT"><img src="IMAGES/atico.jpg" alt="ATLETICO 25/26 HOME KIT" width="130" height="130">
+                     <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵100</div>
+                </div>
+                <div class="item-card" id="item-football-milan" data-name="AC MILAN 25/26 HOME KIT"><img src="IMAGES/milan.jpg" alt="AC MILAN 25/26 HOME KIT" width="130" height="130">
+                     <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵100</div>
+                </div>
+                <div class="item-card" id="item-football-barcelona" data-name="BARCELONA 25/26 HOME KIT"><img src="IMAGES/barca.jpg" alt="BARCELONA 25/26 HOME KIT" width="130" height="130">
+                     <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵100</div>
+                </div>
+                <div class="item-card" id="item-football-bayern-home" data-name="BAYERN 24/25 HOME KIT"><img src="IMAGES/bayern 2.jpg" alt="BAYERN 24/25 HOME KIT" width="130" height="130">
+                     <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵100</div>
+                </div>
+                <div class="item-card" id="item-football-bayern-munich" data-name="BAYERN MUNICH 25/26 HOME KIT"><img src="IMAGES/bayern.jpg" alt="BAYERN MUNICH 25/26 HOME KIT" width="130" height="130">
+                     <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵100</div>
+                </div>
+                <div class="item-card" id="item-football-liverpool" data-name="liverpool 24/25 HOME KIT"><img src="IMAGES/liverpool.jpg" alt="liverpool 24/25 HOME KIT" width="130" height="130">
+                     <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵100</div>
+                </div>
+            </div>
+        </div>
+        <div style="margin-bottom:20px;">
+            <h3>Footballs</h3>
+            <div style="display:flex; gap:40px; justify-content:center; flex-wrap:wrap;">
+                <div class="item-card" id="item-football-nike-flight-2425" data-name="Nike Flight 2425"><img src="IMAGES/Nike Flight 2425.png" alt="Nike Flight 2425" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵100</div>
+                </div>
+                <div class="item-card" id="item-football-nike-flight" data-name="Nike Flight"><img src="IMAGES/Nike Flight.png" alt="Nike Flight" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵100</div>
+                </div>
+                <div class="item-card" id="item-football-puma-orbita-4" data-name="LALIGA 25/26 MATCH BALL"><img src="IMAGES/Puma Orbita 4.png" alt="LALIGA 25/26 MATCH BALL" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵100</div>
+                </div>
+                <div class="item-card" id="item-football-puma-orbita-ultimate" data-name="PREMIER LEAGUE 25/26 MATCH BALL"><img src="IMAGES/Puma Orbita Ultimate.png" alt="PREMIER LEAGUE 25/26 MATCH BALL" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵130</div>
+                </div>
+                <div class="item-card" id="item-football-al-rihla" data-name="Al Rihla"><img src="IMAGES/Al Rihla.png" alt="Al Rihla" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵100</div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h3>Soccer Boots</h3>
+            <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap:40px; justify-items:center; flex-wrap:wrap;">
+                <div class="item-card" id="item-football-adidas-f50" data-name="ADIDAS F50"><img src="IMAGES/IMG-20250702-WA0132(1).jpg" alt="ADIDAS F50" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵150</div>
+                </div>
+                <div class="item-card" id="item-football-adidas-predator" data-name="ADIDAS PREDATOR"><img src="IMAGES/IMG-20250702-WA0131.jpg" alt="ADIDAS PREDATOR" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵150</div>
+                </div>
+                <div class="item-card" id="item-football-nike-phantom-6" data-name="NIKE PHANTOM 6"><img src="IMAGES/nike-phantom-6-ea-sports (4)_1.jpg" alt="NIKE PHANTOM 6" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵150</div>
+                </div>
+                <div class="item-card" id="item-football-nike-mercurial" data-name="NIKE MERCURIAL"><img src="IMAGES/Nike Mercurial 25-26 New Season Pack Boots Leaked - All-New Visual  (1)_1.jpg" alt="NIKE MERCURIAL" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵150</div>
+                </div>
+                <div class="item-card" id="item-football-boot1" data-name="Boot 1"><img src="IMAGES/boot1jpg.jpg" alt="Boot 1" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵150</div>
+                </div>
+                <div class="item-card" id="item-football-boot5" data-name="Boot 5"><img src="IMAGES/boot5.jpg" alt="Boot 5" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵150</div>
+                </div>
+                <div class="item-card" id="item-football-boot7" data-name="Boot 7"><img src="IMAGES/boot7.jpg" alt="Boot 7" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵150</div>
+                </div>
+                <div class="item-card" id="item-football-boot8" data-name="Boot 8"><img src="IMAGES/boot8.jpg" alt="Boot 8" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵150</div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h3>Other Equipment</h3>
+            <div style="display:flex; gap:40px; justify-content:center; flex-wrap:wrap;">
+                <div class="item-card"><img src="IMAGES/ccc1.jpg" width="130" height="140">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵50</div>
+                </div>
+                <div class="item-card"><img src="IMAGES/ccc2.jpg" width="130" height="140">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵60</div>
+                </div>
+                <div class="item-card"><img src="IMAGES/ccc3.jpg" width="130" height="140">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵50</div>
+                </div>
+                <div class="item-card"><img src="IMAGES/gloves.jpg" width="130" height="140">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵70</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container hidden" id="basketball-page">
+         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <h2>Basketball Items</h2>
+        <div style="margin-bottom:20px;">
+            <h3>Jerseys</h3>
+            <div style="display:grid; grid-template-columns: repeat(5, 1fr); gap:30px; justify-items:center; flex-wrap:wrap;">
+                <div class="item-card" id="item-basketball-dallas" data-name="DALLAS"><img src="IMAGES/blue dallas.jpg" alt="DALLAS" width="150" height="150">
+    <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵90</div>
+</div>
+                <div class="item-card" id="item-basketball-celtic" data-name="CELTIC"><img src="IMAGES/Celtic.jpg" alt="CELTIC" width="150" height="150">
+    <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵90</div>
+</div>
+                <div class="item-card" id="item-basketball-suns" data-name="SUN"><img src="IMAGES/suns.jpg" alt="SUN" width="150" height="150">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵90</div>
+                </div>
+                <div class="item-card" id="item-basketball-lakers" data-name="LAKERS"><img src="IMAGES/yellow lakers.png" alt="LAKERS" width="150" height="150">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵90</div>
+                </div>
+                <div class="item-card" id="item-basketball-thunder" data-name="THUNDER"><img src="IMAGES/thunder.jpg" alt="THUNDER" width="150" height="150">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵90</div>
+                </div>
+                <div class="item-card" id="item-basketball-houston" data-name="HOUSTON"><img src="IMAGES/houston.jpg" alt="HOUSTON" width="150" height="150">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵90</div>
+                </div>
+                <div class="item-card" id="item-basketball-rockets" data-name="ROCKETS"><img src="IMAGES/rockets.jpg" alt="ROCKETS" width="150" height="150">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵90</div>
+                </div>
+                <div class="item-card" id="item-basketball-bulls" data-name="BULLS"><img src="IMAGES/bulls.jpg" alt="BULLS" width="150" height="150">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵90</div>
+                </div>
+
+            </div>
+        </div>
+        <div style="margin-bottom:20px;">
+            <h3>Basketballs</h3>
+            <div style="display:flex; gap:30px; justify-content:center; flex-wrap:wrap;">
+                <div class="item-card"><img src="IMAGES/b3.jpeg" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵85</div>
+                </div>
+                <div class="item-card"><img src="IMAGES/aa1.png" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵70</div>
+                </div>
+                <div class="item-card"><img src="IMAGES/aa2.png" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵75</div>
+                </div>
+                <div class="item-card"><img src="IMAGES/aa3.png" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵80</div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h3>Basketball Shoes</h3>
+            <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap:40px; justify-items:center; flex-wrap:wrap;">
+                <div class="item-card"><img src="IMAGES/IMG-20250702-WA0154.JPG" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵120</div>
+                </div>
+                <div class="item-card"><img src="IMAGES/WhatsApp Image 2025-07-08 at 15.58.37_a67d4e9a.jpg" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵110</div>
+                </div>
+                <div class="item-card"><img src="IMAGES/WhatsApp Image 2025-07-08 at 15.58.38_97a51795.jpg" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵110</div>
+                </div>
+                <div class="item-card"><img src="IMAGES/WhatsApp Image 2025-07-08 at 15.58.38_d12d2d5c.jpg" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵100</div>
+                </div>
+                <div class="item-card"><img src="IMAGES/bb3.jpg" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵100</div>
+                </div>
+                <div class="item-card" id="item-basketball-bb5jpg" data-name="BB5"><img src="IMAGES/bb5jpg.jpg" alt="BB5" width="130" height="130">
+    <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵100</div>
+</div>
+                <div class="item-card" id="item-basketball-bb6" data-name="BB6"><img src="IMAGES/bb6.jpg" alt="BB6" width="130" height="130">
+    <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵100</div>
+</div>
+            </div>
+        </div>
+    </div>
+    <div class="container hidden" id="volley-page">
+         <br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <h2>Volleyball Items</h2>
+        <div style="margin-bottom:20px;">
+            <h3>Jerseys</h3>
+            <div style="display:grid; grid-template-columns: repeat(5, 1fr); gap:40px; justify-items:center; flex-wrap:wrap;">
+                <div class="item-card" id="item-volleyball-do" data-name="DO"><img src="IMAGES/do.jpg" alt="DO" width="150" height="150">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵50</div>
+                </div>
+                <div class="item-card" id="item-volleyball-doo" data-name="DOO"><img src="IMAGES/doo.jpeg" alt="DOO" width="150" height="150">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵70</div>
+                </div>
+                <div class="item-card" id="item-volleyball-hh" data-name="HH"><img src="IMAGES/hh.jpg" alt="HH" width="150" height="150">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵60</div>
+                </div>
+                <div class="item-card" id="item-volleyball-jjjj" data-name="JJJJ"><img src="IMAGES/jjjj.jpg" alt="JJJJ" width="150" height="150">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵70</div>
+                </div>
+                <div class="item-card" id="item-volleyball-abcde" data-name="ABCDE"><img src="IMAGES/abcde.jpg" alt="ABCDE" width="150" height="150">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵50</div>
+                </div>
+                 <div class="item-card" id="item-volleyball-vb" data-name="VB"><img src="IMAGES/vb.jpg" alt="VB" width="150" height="150">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵75</div>
+                </div>
+                 <div class="item-card" id="item-volleyball-vb1" data-name="VB1"><img src="IMAGES/vb1.jpg" alt="VB1" width="150" height="150">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵50</div>
+                </div>
+                <div class="item-card" id="item-volleyball-vb2" data-name="VB2"><img src="IMAGES/vb2.jpg" alt="VB2" width="150" height="150">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵75</div>
+                </div>
+                <div class="item-card" id="item-volleyball-vbs1" data-name="VBS1"><img src="IMAGES/vbs1.jpg" alt="VBS1" width="150" height="150">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵50</div>
+                </div>
+                <div class="item-card" id="item-volleyball-vbs2" data-name="VBS2"><img src="IMAGES/vbs2.jpg" alt="VBS2" width="150" height="150">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵50</div>
+                </div>
+                <div class="item-card" id="item-volleyball-vbs3" data-name="VBS3"><img src="IMAGES/vbs3.jpg" alt="VBS3" width="150" height="150">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵50</div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h3>Volleyballs</h3>
+            <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap:40px; justify-items:center; flex-wrap:wrap;">
+               <div class="item-card"><img src="IMAGES/WhatsApp Image 2025-07-08 at 15.58.40_fad3324f.jpg" width="130" height="130">
+             <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵65</div>
+            </div>
+               <div class="item-card"><img src="IMAGES/WhatsApp Image 2025-07-08 at 15.58.40_aa9b5a05.jpg" width="130" height="130">
+             <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵65</div>
+            </div>
+                <div class="item-card"><img src="IMAGES/vb.png" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵65</div>
+                </div>
+                <div class="item-card"><img src="IMAGES/vb3.jpg" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵65</div>
+                </div>
+                <div class="item-card"><img src="IMAGES/vol1.jpg" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵65</div>
+                </div>
+                <div class="item-card"><img src="IMAGES/vol2.jpg" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵65</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container hidden" id="tennis-page">
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <h2>Tennis Items</h2>
+        <div style="margin-bottom:20px;">
+            <h3>Tennis Attire</h3>
+            <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap:40px; justify-items:center; flex-wrap:wrap;">
+                <div class="item-card" id="item-tennis-lacoste1" data-name="Lacoste1"><img src="IMAGES/lacoste1.webp" alt="Lacoste1" width="150" height="150">
+                    <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵70</div>
+                </div>
+                <div class="item-card" id="item-tennis-lacoste3" data-name="Lacoste3"><img src="IMAGES/lacoste3.webp" Width="150" height="150">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵70</div>
+                </div>
+                <div class="item-card" id="item-tennis-lacoste4" data-name="Lacoste4"><img src="IMAGES/lacoste4.webp" width="150" height="150">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵70</div>
+                </div>
+                <div class="item-card" id="item-tennis-ten1" data-name="Ten1"><img src="IMAGES/ten1.jpg" width="150" height="150">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵70</div>
+                </div>
+                <div class="item-card" id="item-tennis-ten2" data-name="Ten2"><img src="IMAGES/ten2.jpg" width="150" height="150">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵70</div>
+                </div>
+                <div class="item-card" id="item-tennis-ten3" data-name="Ten3"><img src="IMAGES/ten3.jpg" width="150" height="150">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵70</div>
+                </div>
+                 <div class="item-card" id="item-tennis-ten4" data-name="Ten4"><img src="IMAGES/ten4.jpg" width="150" height="150">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵70</div>
+                </div>
+            </div>
+        </div>
+        <div style="margin-bottom:20px;">
+            <h3>Tennis Balls</h3>
+            <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:40px; justify-items:center; flex-wrap:wrap;">
+                <div class="item-card"><img src="IMAGES/lt.png" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵15</div>
+                </div>
+                <div class="item-card"><img src="IMAGES/B.png" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵80</div>
+                </div>
+                <div class="item-card"><img src="IMAGES/ttt .png" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵40</div>
+                </div>
+                <div class="item-card"><img src="IMAGES/tb1.jpg" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵40</div>
+                </div>
+                <div class="item-card"><img src="IMAGES/tb2.jpg" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵80</div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h3>Rackets</h3>
+            <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:40px; justify-items:center; flex-wrap:wrap;">
+                <div class="item-card"><img src="IMAGES/lll.png" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵80</div>
+                </div>
+                <div class="item-card"><img src="IMAGES/mnh.png" width="60" height="60">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵70</div>
+                </div>
+                <div class="item-card"><img src="IMAGES/red.png" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵70</div>
+                </div>
+                <div class="item-card"><img src="IMAGES/rac1.jpg" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵70</div>
+                </div>
+                <div class="item-card"><img src="IMAGES/rac2.jpg" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵150</div>
+                </div>
+                <div class="item-card"><img src="IMAGES/rac3.jpg" width="130" height="130">
+                 <div class="item-price" style="margin-top:8px; color:#007bff; font-weight:bold; font-size:1em;">₵70</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Image Popup Modal -->
+    <div id="image-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); align-items:center; justify-content:center; z-index:2000; flex-direction:column;">
+        <span id="close-modal" style="position:absolute; top:30px; right:50px; color:#fff; font-size:2.5em; cursor:pointer; font-weight:bold;">&times;</span>
+        <img id="modal-img" src="" alt="Popup Image" style="max-width:90vw; max-height:60vh; border-radius:10px; box-shadow:0 0 20px #000; margin-bottom:10px;">
+        <div id="modal-desc" style="color:#fff; font-size:1.2em; margin-bottom:18px; text-align:center; min-height:1.5em;"></div>
+        <button id="modal-add-to-cart-btn" style="display:block; background:#007bff; color:#fff; border:none; border-radius:6px; padding:12px 32px; font-size:1.2em; font-weight:bold; cursor:pointer; margin-top:10px;">Add to Cart</button>
+    </div>
+    <script>
+        // Toggle navigation menu on hamburger click
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('hamburger').onclick = function() {
+                const nav = document.getElementById('main-nav');
+                nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex';
+            };
+            // Hide all containers initially
+            document.querySelectorAll('.container').forEach(div => div.classList.add('hidden'));
+            // Show home page (sports selection) by default
+            document.getElementById('home-page').classList.remove('hidden');
+
+            // Shop button logic: go directly to sports selection
+            document.getElementById('shop-menu').onclick = function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.container').forEach(div => div.classList.add('hidden'));
+                document.getElementById('home-page').classList.remove('hidden');
+            };
+
+            // Handle sports selection and show the correct page
+            document.getElementById('sports-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const selected = document.querySelector('input[name="sports"]:checked');
+                if (!selected) return;
+                const sport = selected.value.toLowerCase();
+                document.querySelectorAll('.container').forEach(div => div.classList.add('hidden'));
+                if (sport === 'football') {
+                    document.getElementById('football-page').classList.remove('hidden');
+                } else if (sport === 'basketball') {
+                    document.getElementById('basketball-page').classList.remove('hidden');
+                } else if (sport === 'tennis') {
+                    document.getElementById('tennis-page').classList.remove('hidden');
+                } else if (sport === 'volley') {
+                    document.getElementById('volley-page').classList.remove('hidden');
+                }
+            });
+
+            // Handle back button to return to home page
+            document.getElementById('back-btn').onclick = function() {
+                document.querySelectorAll('.container').forEach(div => div.classList.add('hidden'));
+                document.getElementById('home-page').classList.remove('hidden');
+            };
+        });
+    </script>
+    <script>
+  // Image popup modal logic and add to cart functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('image-modal');
+    const modalImg = document.getElementById('modal-img');
+    const closeModal = document.getElementById('close-modal');
+    const addToCartBtn = document.getElementById('modal-add-to-cart-btn');
+    const modalDesc = document.getElementById('modal-desc');
+
+    // Open modal on image click
+    document.querySelectorAll('.item-card img').forEach(img => {
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', function() {
+        // Show modal
+        modal.style.display = 'flex';
+
+        // Set image src/alt/description
+        modalImg.src = this.src;
+        modalImg.alt = this.alt || '';
+        modalDesc.textContent = this.alt || '';
+
+        // Double its display size
+        modalImg.style.width = 'auto';
+        modalImg.style.height = '1000%';
+
+        // Show Add to Cart button and store src
+        addToCartBtn.style.display = 'block';
+        addToCartBtn.setAttribute('data-img-src', this.src);
+      });
+    });
+
+    // Close modal and reset styles
+    function hideModal() {
+      modal.style.display = 'none';
+      modalImg.src = '';
+      modalDesc.textContent = '';
+      addToCartBtn.style.display = 'none';
+
+      // Reset inline sizing
+      modalImg.style.width = '';
+      modalImg.style.height = '';
+    }
+
+    closeModal.onclick = hideModal;
+    modal.onclick = function(e) {
+      if (e.target === modal) {
+        hideModal();
+      }
+    };
+
+    // Add to cart handler
+    addToCartBtn.onclick = function(e) {
+      e.stopPropagation();
+
+      // Retrieve selected image src
+      const imgSrc = this.getAttribute('data-img-src');
+      let foundCard = null;
+
+      // Locate the corresponding .item-card
+      document.querySelectorAll('.item-card img').forEach(cardImg => {
+        if (!foundCard) {
+          if (
+            cardImg.src === imgSrc ||
+            cardImg.getAttribute('src') === imgSrc ||
+            cardImg.getAttribute('src') === imgSrc.split(/[\\/]/).pop()
+          ) {
+            foundCard = cardImg.closest('.item-card');
+          }
+        }
+      });
+
+      if (foundCard) {
+        const cardImg = foundCard.querySelector('img');
+        const name = cardImg.alt || 'Item';
+        const priceDiv = foundCard.querySelector('.item-price');
+        const price = priceDiv ? priceDiv.textContent.trim() : '';
+
+        // Determine sport category
+        let sport = '';
+        let parent = foundCard.parentElement;
+        while (parent && !sport) {
+          const prev = parent.previousElementSibling;
+          if (prev && prev.tagName === 'H3') {
+            sport = prev.textContent.trim();
+          }
+          parent = parent.parentElement;
+        }
+        if (!sport) {
+          const sportPages = ['football','basketball','tennis','volley'];
+          for (const s of sportPages) {
+            const page = document.getElementById(s + '-page');
+            if (page && !page.classList.contains('hidden')) {
+              sport = s.charAt(0).toUpperCase() + s.slice(1);
+              break;
+            }
+          }
+        }
+
+        // Build cart item object
+        const cartItem = {
+            name,
+            price,
+            sport
+            };
+
+
+        // Persist to localStorage
+        let cart = [];
+        try {
+          cart = JSON.parse(localStorage.getItem('cart')) || [];
+        } catch {
+          cart = [];
+        }
+        cart.push(cartItem);
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        alert('Added to cart!');
+      } else {
+        alert('Could not add item to cart.');
+      }
+    };
+  });
+</script>
+
+    <script src="script.js"></script> 
+</body>
+</html>
+    <script src="script.js"></script> 
+</body>
+</html>

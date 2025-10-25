@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Pro Sport Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .cart-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .cart-table th, .cart-table td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        .cart-table th { background: #f2f2f2; color: #000; }
+        .total-row { font-weight: bold; }
+    </style>
+</head>
+<body style="background: url('IMAGES/neymar.jpg') center center/cover no-repeat; color: #fff; min-height: 100vh;">
+    <header id="main-header" style="width:100%; color:#fff; position: fixed; top:0; left:0; z-index:1000; transition:height 0.3s, box-shadow 0.3s; height:48px; box-shadow:0 2px 8px rgba(0,0,0,0.08); background:#007bff;">
+        <div id="header-content" style="display:flex; align-items:center; justify-content:space-between; max-width:1200px; margin:0 auto; padding:10px 60px; height:48px; transition:padding 0.3s, height 0.3s; background:#007bff;">
+            <div style="font-size:2.5em; font-weight:bold; letter-spacing:2px;">
+                PRO SPORTS SHOP
+            </div>
+            <div id="hamburger" style="display:flex; flex-direction:column; cursor:pointer; width:32px; height:32px; justify-content:center;">
+                <span style="height:4px; background:#fff; margin:3px 0; border-radius:2px; display:block;"></span>
+                <span style="height:4px; background:#fff; margin:3px 0; border-radius:2px; display:block;"></span>
+                <span style="height:4px; background:#fff; margin:3px 0; border-radius:2px; display:block;"></span>
+            </div>
+        </div>
+        <nav id="main-nav" style="background:#007bff; display:none; flex-direction:column; align-items:flex-end; padding:10px 15px;">
+            <a class="cover-menu nav-link" id="home-menu" href="PRO SPORT SHOP.html">Home</a>
+            <a class="cover-menu nav-link" id="shop-menu" href="shop.html">Shop</a>
+            <a class="cover-menu nav-link" id="contact-menu" href="contact.html">Contact</a>
+            <a class="cover-menu nav-link" id="about-menu" href="about.html">About</a>
+            <a class="nav-link" id="add-to-cart-btn" href="cart.html">Cart</a>
+        </nav>
+    </header>
+
+    <!-- Sign Up Modal -->
+    <div id="signup-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); align-items:center; justify-content:center; z-index:3000; flex-direction:column;">
+        <div style="background:#fff; color:#333; border-radius:10px; box-shadow:0 0 20px #000; padding:30px 40px; min-width:320px; max-width:90vw; position:relative;">
+            <span id="close-signup-modal" style="position:absolute; top:10px; right:18px; color:#333; font-size:2em; cursor:pointer; font-weight:bold;">&times;</span>
+            <h2 style="text-align:center; margin-bottom:18px; color:#007bff;">Sign Up to Complete Your Order</h2>
+            <form id="signup-form" action="signup.php" method="POST">
+                <div style="margin-bottom:15px;">
+                    <input type="text" id="signup-name" name="signup-name" placeholder="Name" required style="width:100%; padding:8px; font-size:1em; border-radius:5px; border:1px solid #ccc;">
+                </div>
+                <div style="margin-bottom:15px;">
+                    <input type="email" id="signup-email" name="signup-email" placeholder="Email" required style="width:100%; padding:8px; font-size:1em; border-radius:5px; border:1px solid #ccc;">
+                </div>
+                <div style="margin-bottom:15px;">
+                    <input type="password" id="signup-password" name="signup-password" placeholder="Password" minlength="6" required style="width:100%; padding:8px; font-size:1em; border-radius:5px; border:1px solid #ccc;">
+                </div>
+                <button type="submit" style="background:#007bff; color:#fff; border:none; border-radius:6px; padding:10px 30px; font-size:1.1em; font-weight:bold; cursor:pointer; width:100%;">Sign Up & Order</button>
+                <div style="margin-top:12px; text-align:center;">
+                    <a href="#" id="show-login-link" style="color:#007bff; text-decoration:underline; font-size:1em;">Already have an account? Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Sign Up Modal -->
+
+    <!-- Order Details Modal -->
+    <div id="order-details-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); align-items:center; justify-content:center; z-index:3001; flex-direction:column;">
+        <div style="background:#fff; color:#333; border-radius:10px; box-shadow:0 0 20px #000; padding:30px 40px; min-width:320px; max-width:90vw; position:relative;">
+            <span id="close-order-details-modal" style="position:absolute; top:10px; right:18px; color:#333; font-size:2em; cursor:pointer; font-weight:bold;">&times;</span>
+            <h2 style="text-align:center; margin-bottom:18px; color:#007bff;">Order Details</h2>
+            <form id="order-details-form" action="order.php" method="POST">
+                <div style="margin-bottom:15px;">
+                    <input type="text" id="order-fullname" name="order-fullname" placeholder="Full Name" required style="width:100%; padding:8px; font-size:1em; border-radius:5px; border:1px solid #ccc;">
+                </div>
+                <div style="margin-bottom:15px;">
+                    <input type="tel" id="order-phone" name="order-phone" placeholder="Phone Number" minlength="10" maxlength="10" required style="width:100%; padding:8px; font-size:1em; border-radius:5px; border:1px solid #ccc;">
+                </div>
+                <div style="margin-bottom:15px;">
+                    <input type="text" id="order-delivery" name="order-delivery" placeholder="Place of Delivery. Please be more specific." required style="width:100%; padding:8px; font-size:1em; border-radius:5px; border:1px solid #ccc;">
+                </div>
+                <div style="margin-bottom:15px;">
+                    <select id="order-payment" name="order-payment" required style="width:100%; padding:8px; font-size:1em; border-radius:5px; border:1px solid #ccc;">
+                        <option value="">Select Mode of Payment</option>
+                        <option value="Cash">Cash</option>
+                        <option value="Mobile Money">Mobile Money</option>
+                        <option value="Card">Card</option>
+                    </select>
+                </div>
+                <button type="submit" style="background:#28a745; color:#fff; border:none; border-radius:6px; padding:10px 30px; font-size:1.1em; font-weight:bold; cursor:pointer; width:100%;">Submit Order</button>
+                <div style="margin-top:12px; text-align:center;">
+                    <a href="#" id="show-login-link-order" style="color:#007bff; text-decoration:underline; font-size:1em;">Already have an account? Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Order Details Modal -->
+
+    <!-- Login Modal -->
+    <div id="login-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); align-items:center; justify-content:center; z-index:3002; flex-direction:column;">
+        <div style="background:#fff; color:#333; border-radius:10px; box-shadow:0 0 20px #000; padding:30px 40px; min-width:320px; max-width:90vw; position:relative;">
+            <span id="close-login-modal" style="position:absolute; top:10px; right:18px; color:#333; font-size:2em; cursor:pointer; font-weight:bold;">&times;</span>
+            <h2 style="text-align:center; margin-bottom:18px; color:#007bff;">Login to Your Account</h2>
+            <form id="login-form" action="login.php" method="POST">
+                <div style="margin-bottom:15px;">
+                    <input type="email" id="login-email" name="login-email" placeholder="Email" required style="width:100%; padding:8px; font-size:1em; border-radius:5px; border:1px solid #ccc;">
+                </div>
+                <div style="margin-bottom:15px;">
+                    <input type="password" id="login-password" name="login-password" placeholder="Password" minlength="6" required style="width:100%; padding:8px; font-size:1em; border-radius:5px; border:1px solid #ccc;">
+                </div>
+                <button type="submit" style="background:#007bff; color:#fff; border:none; border-radius:6px; padding:10px 30px; font-size:1.1em; font-weight:bold; cursor:pointer; width:100%;">Login</button>
+            </form>
+        </div>
+    </div>
+    <!-- Login Modal -->
+
+    <div style="padding-top:60px;">
+    <h1>Your Cart</h1>
+    <table class="cart-table" id="cart-table">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Sport</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody id="cart-items">
+            <!-- Items will be injected here -->
+        </tbody>
+        <tfoot>
+            <tr class="total-row">
+                <td colspan="2">Total</td>
+                <td id="cart-total">$0</td>
+            </tr>
+        </tfoot>
+    </table>
+    <div style="margin-top:30px; display:flex; justify-content:center; gap:30px;">
+        <button id="clear-cart-btn" style="background:#dc3545; color:#fff; font-size:1.2em; padding:10px 30px; border:none; border-radius:6px; cursor:pointer;">Clear Cart</button>
+        <button id="order-btn" style="background:#28a745; color:#fff; font-size:1.2em; padding:10px 30px; border:none; border-radius:6px; cursor:pointer;">Order</button>
+        <button id="login-btn" style="background:#007bff; color:#fff; font-size:1.2em; padding:10px 30px; border:none; border-radius:6px; cursor:pointer;">Login</button>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Hamburger menu toggle
+        document.getElementById('hamburger').onclick = function() {
+            const nav = document.getElementById('main-nav');
+            nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex';
+        };
+
+        // Display cart items from localStorage
+        function displayCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItems = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+            cartItems.innerHTML = '';
+            let total = 0;
+            cart.forEach(item => {
+                // Parse price as number, remove any currency symbol
+                let priceNum = 0;
+                if (typeof item.price === 'string') {
+                    priceNum = parseFloat(item.price.replace(/[^\d.]/g, '')) || 0;
+                } else {
+                    priceNum = Number(item.price) || 0;
+                }
+                const row = document.createElement('tr');
+                row.innerHTML = `<td>${item.name}</td><td>${item.sport}</td><td>₵${priceNum.toFixed(2)}</td>`;
+                cartItems.appendChild(row);
+                total += priceNum;
+            });
+            cartTotal.textContent = '₵' + total.toFixed(2);
+        }
+        displayCart();
+
+        // Clear cart button logic
+        document.getElementById('clear-cart-btn').onclick = function() {
+            if (confirm('Are you sure you want to clear your cart?')) {
+                localStorage.removeItem('cart');
+                displayCart();
+            }
+        };
+
+        // Order button logic
+        document.getElementById('order-btn').onclick = function() {
+            document.getElementById('signup-modal').style.display = 'flex';
+        };
+
+        // Close signup modal
+        document.getElementById('close-signup-modal').onclick = function() {
+            document.getElementById('signup-modal').style.display = 'none';
+        };
+
+        // Signup form handler
+        document.getElementById('signup-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+            let res, data;
+            try {
+                res = await fetch(form.action, {
+                    method: form.method,
+                    body: formData
+                });
+                const text = await res.text();
+                try {
+                    data = JSON.parse(text);
+                } catch {
+                    alert('Signup failed: ' + text);
+                    return;
+                }
+            } catch (err) {
+                alert('Network error during signup.');
+                return;
+            }
+            if (data && data.status === 'success') {
+                document.getElementById('signup-modal').style.display = 'none';
+                document.getElementById('order-details-modal').style.display = 'flex';
+            } else {
+                alert((data && data.message) ? data.message : 'Signup failed.');
+            }
+        });
+
+        // Order details form handler
+        document.getElementById('order-details-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+            let res, data;
+            try {
+                res = await fetch(form.action, {
+                    method: form.method,
+                    body: formData
+                });
+                const text = await res.text();
+                try {
+                    data = JSON.parse(text);
+                } catch {
+                    alert('Order failed: ' + text);
+                    return;
+                }
+            } catch (err) {
+                alert('Network error during order.');
+                return;
+            }
+            if (data && data.status === 'success') {
+                alert('Order placed successfully! Thank you.');
+                document.getElementById('order-details-modal').style.display = 'none';
+                localStorage.removeItem('cart');
+                displayCart();
+            } else {
+                alert((data && data.message) ? data.message : 'Order failed.');
+            }
+        });
+
+        // Login button logic
+        document.getElementById('login-btn').onclick = function() {
+            document.getElementById('login-modal').style.display = 'flex';
+        };
+        document.getElementById('close-login-modal').onclick = function() {
+            document.getElementById('login-modal').style.display = 'none';
+        };
+
+        // Login form handler
+        document.getElementById('login-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+            let res, data;
+            try {
+                res = await fetch(form.action, {
+                    method: form.method,
+                    body: formData
+                });
+                const text = await res.text();
+                try {
+                    data = JSON.parse(text);
+                } catch {
+                    alert('Login failed: ' + text);
+                    return;
+                }
+            } catch (err) {
+                alert('Network error during login.');
+                return;
+            }
+            if (data && data.status === 'success') {
+                document.getElementById('login-modal').style.display = 'none';
+                document.getElementById('signup-modal').style.display = 'none'; // Ensure signup is hidden
+                document.getElementById('order-details-modal').style.display = 'flex'; // Go straight to order details
+            } else {
+                alert((data && data.message) ? data.message : 'Login failed.');
+            }
+        });
+
+        // Close order details modal
+        document.getElementById('close-order-details-modal').onclick = function() {
+            document.getElementById('order-details-modal').style.display = 'none';
+        };
+
+        // Show login modal from signup modal
+        document.getElementById('show-login-link').onclick = function(e) {
+            e.preventDefault();
+            document.getElementById('signup-modal').style.display = 'none';
+            document.getElementById('login-modal').style.display = 'flex';
+        };
+
+        // Show login modal from order modal
+        document.getElementById('show-login-link-order').onclick = function(e) {
+            e.preventDefault();
+            document.getElementById('order-details-modal').style.display = 'none';
+            document.getElementById('login-modal').style.display = 'flex';
+        };
+    });
+    </script>
+
+</body>
+</html>

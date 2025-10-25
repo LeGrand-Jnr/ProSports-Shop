@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro-Sports Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="main-header" style="width:100%; color:#fff; position: fixed; top:0; left:0; z-index:1000; transition:height 0.3s, box-shadow 0.3s; height:48px; box-shadow:0 2px 8px rgba(0,0,0,0.08); background:#007bff;">
+        <div id="header-content" style="display:flex; align-items:center; justify-content:space-between; max-width:1200px; margin:0 auto; padding:10px 60px; height:48px; transition:padding 0.3s, height 0.3s; background:#007bff;">
+            <div style="display:flex; align-items:center; gap:16px; font-size:2.5em; font-weight:bold; letter-spacing:2px;">
+                <a href="PRO SPORT SHOP.html">
+                    <img src="IMAGES/coverpage.jpg" alt="Logo" style="height:38px; width:38px; object-fit:cover; border-radius:50%; vertical-align:middle; margin-right:6px;">
+                </a>
+                <a href="PRO SPORT SHOP.html" style="color:inherit; text-decoration:none;">PRO SPORTS SHOP</a>
+            </div>
+            <div id="hamburger" style="display:flex; flex-direction:column; cursor:pointer; width:32px; height:32px; justify-content:center;">
+                <span style="height:4px; background:#fff; margin:3px 0; border-radius:2px; display:block;"></span>
+                <span style="height:4px; background:#fff; margin:3px 0; border-radius:2px; display:block;"></span>
+                <span style="height:4px; background:#fff; margin:3px 0; border-radius:2px; display:block;"></span>
+            </div>
+        </div>
+        <nav id="main-nav" style="background:#007bff; display:none; flex-direction:column; align-items:flex-end; padding:10px 15px;">
+            <a class="cover-menu nav-link" id="home-menu" href="PRO SPORT SHOP.html">Home</a>
+            <a class="cover-menu nav-link" id="shop-menu" href="shop.html">Shop</a>
+            <a class="cover-menu nav-link" id="contact-menu" href="contact.html">Contact</a>
+            <a class="cover-menu nav-link" id="about-menu" href="about.html">About</a>
+            <a class="nav-link" id="add-to-cart-btn" href="cart.html">Cart</a>
+        </nav>
+    </header>
+
+    <div class="container" id="cover-page" style="background: url('IMAGES/basketballimage.jpg') center center/cover no-repeat; color: rgb(255, 255, 255);">
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+            <h1 style="font-size:3.0em; margin-bottom: 0.5em; text-align:center; font-weight:bold;">WELCOME TO PRO SPORTS SHOP</h1>
+            <p style="font-size:2.0em; font-style:italic; text-align:center; font-weight:bold;">HIGH QUALITY EQUIPMENT FOR YOUR FAVOURITE SPORTS</p>
+
+            <!-- Three image containers -->
+            <div style="display:flex; justify-content:center; gap:40px; margin: 40px 0 30px 0;">
+                <a href="shop.html#football-page" style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.08); padding:6px; width:180px; display:flex; flex-direction:column; align-items:center; text-decoration:none;">
+                    <img src="IMAGES/fbstar.jpg" alt="Football Jersey" style="width:170px; height:260px; object-fit:cover; border-radius:8px; margin-bottom:10px;">
+                    <span style="color:#007bff; font-weight:bold;">Football</span>
+                </a>
+                <a href="shop.html#basketball-page" style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.08); padding:6px; width:180px; display:flex; flex-direction:column; align-items:center; text-decoration:none;">
+                    <img src="IMAGES/bb star.jpg" alt="Basketball" style="width:170px; height:260px; object-fit:cover; border-radius:8px; margin-bottom:10px;">
+                    <span style="color:#007bff; font-weight:bold;">Basketball</span>
+                </a>
+                <a href="shop.html#tennis-page" style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.08); padding:6px; width:180px; display:flex; flex-direction:column; align-items:center; text-decoration:none;">
+                    <img src="IMAGES/tennisstar.jpg" alt="Tennis Attire" style="width:170px; height:260px; object-fit:cover; border-radius:8px; margin-bottom:10px;">
+                    <span style="color:#007bff; font-weight:bold;">Tennis</span>
+                </a>
+                <a href="shop.html#volley-page" style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.08); padding:6px; width:180px; display:flex; flex-direction:column; align-items:center; text-decoration:none;">
+                    <img src="IMAGES/volleystar.jpg" alt="Volley Attire" style="width:170px; height:260px; object-fit:cover; border-radius:8px; margin-bottom:10px;">
+                    <span style="color:#007bff; font-weight:bold;">Volley</span>
+                </a>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Image Popup Modal -->
+    <div id="image-modal" style="display:none; position:fixed; z-index:2000; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); align-items:center; justify-content:center;">
+        <div style="background:#fff; border-radius:12px; max-width:400px; width:90%; padding:24px 16px 16px 16px; box-shadow:0 4px 24px rgba(0,0,0,0.18); position:relative; text-align:center;">
+            <button id="close-modal-btn" style="position:absolute; top:10px; right:16px; background:none; border:none; font-size:1.5em; color:#007bff; cursor:pointer;">&times;</button>
+            <img id="modal-img" src="" alt="" style="max-width:90%; max-height:220px; border-radius:8px; margin-bottom:18px;">
+            <div id="modal-desc" style="font-size:1.1em; margin-bottom:18px; color:#222;"></div>
+            <button id="add-to-cart-btn" style="background:#007bff; color:#fff; border:none; border-radius:5px; font-size:1.2em; padding:10px 30px; cursor:pointer;">ADD TO CART</button>
+        </div>
+    </div>
+
+    <script>
+        // Toggle navigation menu on hamburger click
+        document.getElementById('hamburger').onclick = function() {
+            const nav = document.getElementById('main-nav');
+            nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex';
+        };
+
+        // Optional: Hide cover page on Exit button click
+        if (document.getElementById('cover-exit-btn')) {
+            document.getElementById('cover-exit-btn').onclick = function() {
+                document.getElementById('cover-page').style.display = 'none';
+            };
+        }
+
+        // Image modal functionality - FIXED SELECTOR
+        const modal = document.getElementById('image-modal');
+        const modalImg = document.getElementById('modal-img');
+        const modalDesc = document.getElementById('modal-desc');
+
+        // Use .item-card img instead of .shop-item img
+        document.querySelectorAll('.item-card img').forEach(img => {
+            img.onclick = function() {
+                modal.style.display = 'flex';
+                modalImg.src = this.src;
+                // Find .item-price inside the same .item-card
+                const priceDiv = this.parentElement.querySelector('.item-price');
+                modalDesc.innerHTML = priceDiv ? priceDiv.innerHTML : '';
+            }
+        });
+
+        document.getElementById('close-modal-btn').onclick = function() {
+            modal.style.display = 'none';
+        };
+
+        // Add to cart button (dummy function)
+        document.getElementById('add-to-cart-btn').onclick = function() {
+            alert('Added to cart! (This is a demo action)');
+        }
+
+        // Header expand/collapse on hover
+        const header = document.getElementById('main-header');
+        header.onmouseenter = () => header.classList.add('expanded');
+        header.onmouseleave = () => header.classList.remove('expanded');
+    </script>
+     <script>
+        // Header expand/collapse on hover
+        const header = document.getElementById('main-header');
+        header.onmouseenter = () => header.classList.add('expanded');
+        header.onmouseleave = () => header.classList.remove('expanded');
+
+        // Toggle navigation menu on hamburger click (for mobile)
+        document.getElementById('hamburger').onclick = function() {
+            const nav = document.getElementById('main-nav');
+            nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex';
+        };
+
+        // Set page name (optional: update dynamically if needed)
+        document.getElementById('page-name').textContent = "Home";
+    </script>
+
+    <div style="margin-top:40px; width:100%; display:flex; flex-direction:column; align-items:center;">
+        <h2 style="color:#c33ed4; font-size:2.2em; margin-bottom:22px; text-shadow:0 2px 8px rgba(0,0,0,0.2);">Quick Selling Items</h2>
+        <div id="gallery" style="background:rgba(255,255,255,0.97); border-radius:18px; box-shadow:0 4px 18px rgba(0,0,0,0.09); padding:28px 0; width:98%; max-width:1200px; display:flex; flex-direction:row; align-items:center; justify-content:center;">
+            <button id="prev-btn" style="background:none; color:#007bff; border:none; border-radius:50%; font-size:2em; padding:10px 22px; margin-right:22px; cursor:pointer; transition:background 0.2s;">
+                &#8592;
+            </button>
+            <div id="gallery-items" style="display:flex; flex-direction:row; align-items:center; justify-content:center; gap:32px; width:100%;">
+                <!-- Item cards will be injected here -->
+            </div>
+            <button id="next-btn" style="background:none; color:#007bff; border:none; border-radius:50%; font-size:2em; padding:10px 22px; margin-left:22px; cursor:pointer; transition:background 0.2s;">
+                &#8594;
+            </button>
+        </div>
+    </div>
+    <script>
+        // Quick selling products data
+        const products = [
+            {
+                name: "Adidas Boots",
+                price: "GHS 350",
+                img: "IMAGES/adidasboot.jpg"
+            },
+            {
+                name: "Nike Shin Guards",
+                price: "GHS 80",
+                img: "IMAGES/shinguard.jpg"
+            },
+            {
+                name: "Puma Match Ball",
+                price: "GHS 120",
+                img: "IMAGES/pumaball.jpg"
+            },
+            {
+                name: "Goalkeeper Gloves",
+                price: "GHS 95",
+                img: "IMAGES/gkgloves.jpg"
+            },
+            {
+                name: "Umbro Jersey",
+                price: "GHS 60",
+                img: "IMAGES/training.jpg"
+            },
+            {
+                name: "Adidas Socks",
+                price: "GHS 20",
+                img: "IMAGES/socks.jpg"
+            },
+            {
+                name: "PSG SHIRTS",
+                price: "GHS 150",
+                img: "IMAGES/psg.jpg"
+            }
+        ];
+
+        let startIdx = 0;
+        const itemsPerPage = 5;
+
+        function showProducts() {
+            const gallery = document.getElementById('gallery-items');
+            gallery.innerHTML = '';
+            for (let i = startIdx; i < Math.min(startIdx + itemsPerPage, products.length); i++) {
+                const item = products[i];
+                gallery.innerHTML += `
+                    <div class="item-card" style="background:#fff; border-radius:14px; box-shadow:0 2px 12px rgba(0,0,0,0.09); padding:20px 16px; width:200px; min-height:320px; display:flex; flex-direction:column; align-items:center; transition:box-shadow 0.2s;">
+                        <img src="${item.img}" alt="${item.name}" style="width:160px; height:120px; object-fit:cover; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.13); margin-bottom:16px;">
+                        <div style="font-size:1.15em; font-weight:bold; color:#007bff; margin-bottom:8px;">${item.name}</div>
+                        <div class="item-price" style="font-size:1.08em; color:#222; margin-bottom:14px;">${item.price}</div>
+                        <button class="buy-now-btn" data-name="${item.name}" data-price="${item.price}" data-img="${item.img}" style="background:#28a745; color:#fff; border:none; border-radius:5px; font-size:1em; padding:8px 18px; cursor:pointer;">Buy Now</button>
+                    </div>
+                `;
+            }
+            // Add event listeners to Buy Now buttons
+            gallery.querySelectorAll('.buy-now-btn').forEach(btn => {
+                btn.onclick = function() {
+                    const name = btn.getAttribute('data-name');
+                    const price = btn.getAttribute('data-price');
+                    const img = btn.getAttribute('data-img');
+                    // Add to cart logic
+                    let cart = [];
+                    try {
+                        cart = JSON.parse(localStorage.getItem('cart')) || [];
+                    } catch {
+                        cart = [];
+                    }
+                    cart.push({
+                        name: name,
+                        price: price,
+                        sport: "Quick Sell",
+                        img: img
+                    });
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    alert('Added to cart!');
+                };
+            });
+        }
+
+        document.getElementById('prev-btn').onclick = function() {
+            if (startIdx > 0) {
+                startIdx--;
+            } else {
+                startIdx = products.length - itemsPerPage;
+                if (startIdx < 0) startIdx = 0;
+            }
+            showProducts();
+        };
+        document.getElementById('next-btn').onclick = function() {
+            if (startIdx < products.length - itemsPerPage) {
+                startIdx++;
+            } else {
+                startIdx = 0;
+            }
+            showProducts();
+        };
+
+        // Show first set of products on load
+        showProducts();
+
+        // Auto-change quick selling items every 2 seconds
+        setInterval(function() {
+            if (startIdx < products.length - itemsPerPage) {
+                startIdx++;
+            } else {
+                startIdx = 0;
+            }
+            showProducts();
+        }, 10000);
+    </script>
+    <footer style="background:#007bff; color:#fff; text-align:center; padding:28px 0 18px 0; margin-top:40px; font-size:1.08em;">
+        <div style="max-width:1200px; margin:0 auto;">
+            <div style="margin-bottom:14px;">
+                <a href="PRO SPORT SHOP.html" style="color:#fff; text-decoration:none; margin:0 12px; font-weight:bold;">Home</a> |
+                <a href="shop.html" style="color:#fff; text-decoration:none; margin:0 12px; font-weight:bold;">Shop</a> |
+                <a href="contact.html" style="color:#fff; text-decoration:none; margin:0 12px; font-weight:bold;">Contact</a> |
+                <a href="about.html" style="color:#fff; text-decoration:none; margin:0 12px; font-weight:bold;">About</a> |
+                <a href="cart.html" style="color:#fff; text-decoration:none; margin:0 12px; font-weight:bold;">Cart</a>
+            </div>
+            <div style="margin-bottom:14px;">
+                <a href="mailto:info@prosportshop.com" style="color:#fff; text-decoration:underline; margin:0 10px;">
+                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg" alt="Email" style="height:18px; vertical-align:middle; margin-right:6px;">info@prosportshop.com
+                </a>
+                <span style="margin:0 10px;">
+                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" style="height:18px; vertical-align:middle; margin-right:6px;">+233 20 123 4567
+                </span>
+            </div>
+            <div>
+                &copy; 2025 PRO SPORTS SHOP &mdash; All rights reserved.
+            </div>
+        </div>
+    </footer>
+    <!-- No code changes needed in this file for signup to work, but here are the common reasons signup fails when going live: -->
+<!-- 1. Make sure your PHP backend (signup.php) is deployed and accessible from your live server. -->
+<!-- 2. Update your PHP database connection credentials for the live environment (host, user, password, dbname). -->
+<!-- 3. Ensure your database and tables exist on the live server. -->
+<!-- 4. Make sure file/folder permissions allow PHP to run and write to the database. -->
+<!-- 5. If using HTTPS, ensure AJAX requests use https:// URLs and CORS is configured if needed. -->
+<!-- 6. Check browser console and network tab for errors (404, 500, CORS, etc). -->
+<!-- 7. If your live URL is different, update the form action to the correct endpoint. -->
+</body>
+</html>

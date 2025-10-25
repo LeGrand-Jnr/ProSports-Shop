@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro-Sports Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="main-header" style="width:100%; color:#fff; position: fixed; top:0; left:0; z-index:1000; transition:height 0.3s, box-shadow 0.3s; height:48px; box-shadow:0 2px 8px rgba(0,0,0,0.08); background:#007bff;">
+        <div id="header-content" style="display:flex; align-items:center; justify-content:space-between; max-width:1200px; margin:0 auto; padding:10px 60px; height:48px; transition:padding 0.3s, height 0.3s; background:#007bff;">
+            <div style="display:flex; align-items:center; gap:16px; font-size:2.5em; font-weight:bold; letter-spacing:2px;">
+                <a href="PRO SPORT SHOP.html">
+                    <img src="IMAGES/coverpage.jpg" alt="Logo" style="height:38px; width:38px; object-fit:cover; border-radius:50%; vertical-align:middle; margin-right:6px;">
+                </a>
+                <a href="PRO SPORT SHOP.html" style="color:inherit; text-decoration:none;">PRO SPORTS SHOP</a>
+            </div>
+            <div id="hamburger" style="display:flex; flex-direction:column; cursor:pointer; width:32px; height:32px; justify-content:center;">
+                <span style="height:4px; background:#fff; margin:3px 0; border-radius:2px; display:block;"></span>
+                <span style="height:4px; background:#fff; margin:3px 0; border-radius:2px; display:block;"></span>
+                <span style="height:4px; background:#fff; margin:3px 0; border-radius:2px; display:block;"></span>
+            </div>
+        </div>
+        <nav id="main-nav" style="background:#007bff; display:none; flex-direction:column; align-items:flex-end; padding:10px 15px;">
+            <a class="cover-menu nav-link" id="home-menu" href="PRO SPORT SHOP.html">Home</a>
+            <a class="cover-menu nav-link" id="shop-menu" href="shop.html">Shop</a>
+            <a class="cover-menu nav-link" id="contact-menu" href="contact.html">Contact</a>
+            <a class="cover-menu nav-link" id="about-menu" href="about.html">About</a>
+            <a class="nav-link" id="add-to-cart-btn" href="cart.html">Cart</a>
+        </nav>
+    </header>
+
+    <div class="container hidden" id="about-page" style="background: url('IMAGES/aboutpage.jpg') center center/cover no-repeat; color: #222; min-height: 110vh; padding: 200px 0; margin-top:20px;">
+        <br><br>
+        <h2 style="text-align:center; color:#ffffff; margin-bottom: -10px;">ABOUT PRO SPORTS SHOP</h2>
+        <div style="max-width:700px; margin:40px auto 0; background:#ffffff; color:#070000; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.07); padding:28px 20px 20px 20px;">
+             <!-- Our Mission -->
+            <h3 style="color:#007bff; margin-bottom:18px; margin-top:30px;">Our Mission</h3>
+            <p style="font-size:1.15em; color:#222; line-height:1.7;">
+                Our mission is to empower athletes and active individuals by providing high-quality, affordable, and stylish sports gear.
+                We believe that everyone deserves the chance to play, compete, and enjoy the benefits of an active lifestyle. 
+                <span id="moreText" style="display:none;">
+                 We are committed to supporting our community, promoting healthy living, and delivering exceptional customer service every step of the way.
+                 We strive to be more than just a store—we want to be your partner in sport, your go-to source for advice, and your trusted friend in the world of athletics.
+                 Pro Sports Shop is not just a place to buy equipment; it's a hub for sports enthusiasts to connect, learn, and grow together.
+                </span>    
+            </p>
+            <a href="javascript:void(0);" onclick="toggleText()" style="color:#007bff;">Read More</a>
+             <!-- Meet Our Team -->
+            <style>
+                .team-container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 24px;
+                padding: 0;
+                margin: 0;
+                }
+
+                .member-card {
+                display: flex;
+                align-items: flex-start;
+                background: #f9f9f9;
+                padding: 16px;
+                border-radius: 8px;
+             width: calc(50% - 12px);
+             box-sizing: border-box;
+                }
+
+                .member-card img {
+                width: 80px;
+                height: 80px;
+                object-fit: cover;
+                border-radius: 50%;
+                margin-right: 16px;
+                cursor: pointer;
+                transition: transform 0.3s ease;
+                }
+
+                .member-card img:hover {
+                transform: scale(1.05);
+                }
+
+                .member-info span {
+                color: #c33ed4;
+                font-weight: bold;
+                font-size: 1.08em;
+                }
+
+                .member-info p {
+                    margin: 4px 0 0;
+                    color: #050000;
+                    line-height: 1.5;
+                    font-size: 1.08em;
+                }
+
+                @media (max-width: 600px) {
+                .member-card {
+                width: 100%;
+                }
+                }
+
+                /* Modal styles */
+                .image-modal {
+                    display: none;
+                    position: fixed;
+                    z-index: 999;
+                    left: 0; top: 0;
+                    width: 100%; height: 100%;
+                    background-color: rgba(0,0,0,0.8);
+                    align-items: center;
+                    justify-content: center;
+                    }
+
+                    .modal-content {
+                    max-width: 80%;
+                    max-height: 80%;
+                    border-radius: 8px;
+                    }
+
+                    .close {
+                    position: absolute;
+                    top: 20px;
+                    right: 30px;
+                    color: white;
+                    font-size: 32px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    }
+                </style>
+
+        <script>
+            // Get modal elements
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const closeBtn = document.querySelector('.close');
+
+            // Click image to show modal
+            document.querySelectorAll('.popup-image').forEach(img => {
+            img.addEventListener('click', () => {
+            modal.style.display = 'flex';
+         modalImg.src = img.src;
+            });
+            });
+
+            // Close modal
+            closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+            });
+
+            // Optional: Close on outside click
+            modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+            modal.style.display = 'none';
+            }
+            });
+        </script>
+
+        <div class="team-container">
+            <div class="member-card">
+                <img src="IMAGES/ZAKIE.jpg" alt="Asante Ali Zakie" class="popup-image" />
+             <div class="member-info">
+                <span>ASANTE ALI ZAKIE</span> – FOUNDER
+                <p>Zakie’s vision and leadership have shaped our shop from day one. He brings years of experience and a deep love for sports to everything we do.</p>
+             </div>
+            </div>
+
+            <div class="member-card">
+                <img src="IMAGES/sammy.jpg" alt="Samuel Odonkor Nartey" class="popup-image" />
+                <div class="member-info">
+                <span>SAMUEL ODONKOR NARTEY</span> – RELATIONS
+                <p>Samuel ensures our operations run smoothly and our customers are always satisfied. His commitment to excellence inspires our whole team.</p>
+                </div>
+            </div>
+
+            <div class="member-card">
+                <img src="IMAGES/DELALI.jpg" alt="Caesar Delali" class="popup-image" />
+                <div class="member-info">
+                <span>CAESAR DELALI</span> – SALES LEAD
+                <p>Caesar’s product knowledge and friendly approach help customers find exactly what they need, every time.</p>
+                </div>
+            </div>
+
+            <div class="member-card">
+                <img src="IMAGES/IMG_2778.JPG" alt="Abia Evans Magnus Lawer" class="popup-image" />
+                <div class="member-info">
+                <span>ABIA EVANS MAGNUS LAWER</span> – CUSTOMER CARE
+                <p>Abia is dedicated to answering questions, solving problems, and making sure every customer leaves happy.</p>
+                </div>
+            </div>
+
+            <div class="member-card">
+                <img src="IMAGES/AGES.jpg" alt="Duah Bismark" class="popup-image" />
+                <div class="member-info">
+                <span>DUAH BISMARK</span> – LOGISTICS
+                <p>Duah keeps our inventory organized and ensures fast, reliable delivery for all orders.</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Read More/Read Less functionality -->
+    <script>
+        function toggleText() {
+        const moreText = document.getElementById("moreText");
+        const link = event.target;
+        if (moreText.style.display === "none") {
+        moreText.style.display = "inline";
+        link.textContent = "Read Less";
+        } else {
+        moreText.style.display = "none";
+        link.textContent = "Read More";
+        }
+        }
+    </script>
+    <script src="script.js"></script> 
+      <script>
+        // Toggle navigation menu on hamburger click
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('hamburger').onclick = function() {
+                const nav = document.getElementById('main-nav');
+                nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex';
+            };
+            // Show the about page by default
+            document.getElementById('about-page').classList.remove('hidden');
+        });
+    </script>
+    <footer style="background:#007bff; color:#fff; text-align:center; padding:28px 0 18px 0; margin-top:40px; font-size:1.08em;">
+        <div style="max-width:1200px; margin:0 auto;">
+            <div style="margin-bottom:14px;">
+                <a href="PRO SPORT SHOP.html" style="color:#fff; text-decoration:none; margin:0 12px; font-weight:bold;">Home</a> |
+                <a href="shop.html" style="color:#fff; text-decoration:none; margin:0 12px; font-weight:bold;">Shop</a> |
+                <a href="contact.html" style="color:#fff; text-decoration:none; margin:0 12px; font-weight:bold;">Contact</a> |
+                <a href="about.html" style="color:#fff; text-decoration:none; margin:0 12px; font-weight:bold;">About</a> |
+                <a href="cart.html" style="color:#fff; text-decoration:none; margin:0 12px; font-weight:bold;">Cart</a>
+            </div>
+            <div style="margin-bottom:14px;">
+                <a href="mailto:info@prosportshop.com" style="color:#fff; text-decoration:underline; margin:0 10px;">
+                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg" alt="Email" style="height:18px; vertical-align:middle; margin-right:6px;">info@prosportshop.com
+                </a>
+                <span style="margin:0 10px;">
+                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" style="height:18px; vertical-align:middle; margin-right:6px;">+233 20 123 4567
+                </span>
+            </div>
+            <div>
+                &copy; 2025 PRO SPORTS SHOP &mdash; All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>    
+</html>

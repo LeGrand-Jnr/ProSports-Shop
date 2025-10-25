@@ -1,0 +1,38 @@
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# IDE/editor folders
+.vscode/
+.idea/
+
+# Logs and temporary files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.cache/
+tmp/
+cache/
+logs/
+
+# Dependency directories
+node_modules/
+vendor/
+
+# Environment / local config
+.env
+.env.*
+config.php
+
+# Composer and packaging
+composer.lock
+composer.phar
+
+# Build outputs
+dist/
+build/
+
+# Other
+/*.zip
+/*.tar.gz
